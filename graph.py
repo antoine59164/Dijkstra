@@ -10,7 +10,8 @@ class Graph:
 
     def dijkstra(self, summit1: Summit, summit2: Summit):
 
-        return self.countSummit()
+        for i in range(self.countSummit()):
+            return min(summit1.distances.items())
 
 
 summitA = Summit('A', {"A" : 0, "B" : 85, "C" : 217, "E" : 173})
