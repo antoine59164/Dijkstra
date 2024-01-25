@@ -4,8 +4,9 @@ class Summit:
         self.distances = distances
 
     def mindistances(self):
+        min = None
         for key, value in self.distances.items():
-            if key != self.name:
-                if value < min:
+            if key != self.name and value is not None:
+                if min is None or value < min:
                     min = value
         return min

@@ -10,20 +10,19 @@ class Graph:
 
     def dijkstra(self, summit1: Summit, summit2: Summit):
 
-        for i in range(self.countSummit()):
-            return min(summit1.distances.items())
+        return summit1.mindistances()
 
 
-summitA = Summit('A', {"A" : 0, "B" : 85, "C" : 217, "E" : 173})
-summitB = Summit('B', {"A" : 85, "B" : 0, "F" : 80})
-summitC = Summit('C', {"A" : 217, "C" : 0, "G" : 186, "H" : 103})
-summitD = Summit('D', {"D" : 0, "H": 183})
-summitE = Summit('E', {"A" : 173, "E" : 0, "J" : 502})
-summitF = Summit('F', {"B" : 80, "F" : 0, "I" : 250})
-summitG = Summit('G', {"C" : 186, "G" : 0})
-summitH = Summit('H', {"C" : 103, "D" : 183, "H" : 0, "J": 167})
-summitI = Summit('I', {"F" : 250, "I" : 0, "J" : 84})
-summitJ = Summit('J', {"E" : 502, "H" : 167, "I" : 84, "J" : 0})
+summitA = Summit('A', {"A": 0, "B": 85, "C": 217, "D": None, "E": 173, "F": None, "G": None, "H": None, "I": None, "J": None})
+summitB = Summit('B', {"A": 85, "B": 0, "C": None, "D": None, "E": None, "F": 80, "G": None, "H": None, "I": None, "J": None})
+summitC = Summit('C', {"A": 217, "B": None, "C": 0, "D": None, "E": None, "F": None, "G": 186, "H": 103, "I": None, "J": None})
+summitD = Summit('D', {"A": None, "B": None, "C": None, "D": 0, "E": None, "F": None, "G": None, "H": 183, "I": None, "J": None})
+summitE = Summit('E', {"A": 173, "B": None, "C": None, "D": None, "E": 0, "F": None, "G": None, "H": None, "I": None, "J": 502})
+summitF = Summit('F', {"A": None, "B": 80, "C": None, "D": None, "E": None, "F": 0, "G": None, "H": None, "I": 250, "J": None})
+summitG = Summit('G', {"A": None, "B": None, "C": 186, "D": None, "E": None, "F": None, "G": 0, "H": None, "I": None, "J": None})
+summitH = Summit('H', {"A": None, "B": None, "C": 103, "D": 183, "E": None, "F": None, "G": None, "H": 0, "I": None, "J": 167})
+summitI = Summit('I', {"A": None, "B": None, "C": None, "D": None, "E": None, "F": 250, "G": None, "H": None, "I": 0, "J": 84})
+summitJ = Summit('J', {"A": None, "B": None, "C": None, "D": None, "E": 502, "F": None, "G": None, "H": 167, "I": 84, "J": 0})
 
 listSummit = [summitA, summitB, summitC, summitD, summitE, summitF, summitG, summitH, summitI, summitJ]
 
