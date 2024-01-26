@@ -1,16 +1,26 @@
 from Algorithme.Dijkstra.summit import Summit
+from Algorithme.Dijkstra.utils import *
 
 
 class Graph:
-    def __init__(self, summit: [Summit]):
-        self.summit = summit
+    def __init__(self, summits: [Summit]):
+        self.summits = summits
 
     def countSummit(self):
-        return len(self.summit)
+        return len(self.summits)
+
+    def arrayOfValue(self):
+        result = []
+        for i in range(self.countSummit()):
+            for j, value in self.summits[i].distances.items():
+                result.append(value)
+        return result
 
     def dijkstra(self, summit1: Summit, summit2: Summit):
 
-        return summit1.mindistances()
+        for i in range (self.countSummit()):
+            print(self.summits[i].name + " = " + str(self.summits[i].mindistances()))
+
 
 
 summitA = Summit('A', {"A": 0, "B": 85, "C": 217, "D": None, "E": 173, "F": None, "G": None, "H": None, "I": None, "J": None})
@@ -27,4 +37,6 @@ summitJ = Summit('J', {"A": None, "B": None, "C": None, "D": None, "E": 502, "F"
 listSummit = [summitA, summitB, summitC, summitD, summitE, summitF, summitG, summitH, summitI, summitJ]
 
 g = Graph(listSummit)
-print(g.dijkstra(summitA, summitB))
+# print(g.dijkstra(summitA, summitB))
+print(createMatrix(g.countSummit(), g.countSummit(), g.arrayOfValue()))
+
