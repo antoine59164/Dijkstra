@@ -7,3 +7,9 @@ def createMatrix(rowCount, colCount, dataList):
         matrix.append(rowList)
 
     return matrix
+
+
+def find(summits: [], values):
+    for x in summits:
+        if x.name == values:
+            return x
